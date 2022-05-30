@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div class="task">
+      <h1>Task name</h1>
+      <input type="text" placeholder="Enter task name" class="name">
+    </div>
+    <div class="subtask">
+      <h1>
+        Subtask
+        <button class="plus">+</button></h1>
+      <div class="main">
+        <div class="label">
+        <span class="desc">Description</span><span class="time">Time</span><span>Button</span>
+        </div>
+      <div class="form">
+        
+      </div><br>
+      <button class="save">SAVE TASK IN LocalStorage</button>
+      <button type="button" class="create">CREATE NEW TASK</button>
+    </div>
+  </div>        
+    <div class="result">
+      <h1>Task list</h1>
+      <ul class="todo__items">
+      
+      </ul>
+    </div>
+  </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+    $('button.plus').on('click', function(){
+      const form = document.querySelector(".form");
+      const text = document.createElement("input");
+      const number = document.createElement("input");
+      const button = document.createElement("button");
+      const br = document.createElement("br");
+      text.setAttribute("type", "text");
+      text.classList.add("desc");
+      number.setAttribute("type", "number");
+      number.classList.add("number");
+      button.classList.add("del");
+      form.classList.add("form");
+      button.innerHTML = "X"
+      // form.className('form');
+      // const div = document.querySelector('.form').innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+      // form.innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+      form.appendChild(text);
+      form.appendChild(number);
+      form.appendChild(button);
+      form.appendChild(br);
+      document.querySelector('.label').style.display = "flex";
+      document.querySelector('.save').style.display = "block";
+      document.querySelector('.create').style.display = "block";
+    });
+  </script>
+</body>
+</html>

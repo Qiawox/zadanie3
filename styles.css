@@ -1,0 +1,145 @@
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1{
+  font-family: 'Comfortaa', cursive;
+}
+.task
+{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;;
+}
+.task h1
+{
+  margin-bottom: 30px;
+}
+.task input
+{
+  outline: none;
+  padding: 10px 10px;
+  width: 642px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 2px solid #868686;
+}
+.task input:focus
+{
+  border: 2px solid #000;
+}
+.subtask
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.subtask h1
+{
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.plus
+{
+  background: #000;
+  color: #fff;
+  padding: 10px 35px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.subtask input[type="text"]
+{
+  width: 450px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.subtask input[type="number"]
+{
+  width: 50px;
+  margin: 0 30px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.label
+{
+  text-align: center;
+  display: none;
+}
+.desc
+{
+  padding-left: 205px;
+  padding-bottom: 20px;
+  padding-right: 205px;
+}
+.del
+{
+  background: transparent;
+  border: 2px solid #000;
+  padding: 12px 35px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+.time
+{
+  padding-right: 59px;
+}
+.save
+{
+  width: 100%;
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 20px 10px;
+  margin-bottom: 30px;
+  display: none;
+}
+.create
+{
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 20px 10px;
+  margin-bottom: 30px;
+  display: none;
+}
+button:hover
+{
+  filter: brightness(0.8);
+}
+.subtask h1
+{
+  display: inline;
+}
+.plus
+{
+  width: 5%;
+  padding-left: 23px;
+}
+button
+{
+  cursor: pointer;
+}
+.result
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
