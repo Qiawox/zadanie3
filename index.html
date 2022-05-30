@@ -28,17 +28,17 @@
         
       </div><br>
       <button class="save">SAVE TASK IN LocalStorage</button>
-      <button type="button" class="create">CREATE NEW TASK</button>
-    </div>
-  </div>        
-    <div class="result">
-      <h1>Task list</h1>
-      <ul class="todo__items">
-      
-      </ul>
+      <button type="button" class="create" onclick="add(event)">CREATE NEW TASK</button>
     </div>
   </div>
-  <script src="js/jquery-3.6.0.min.js"></script>
+  <h1 class="list">Task list</h1>  
+    <div class="result">
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
   <script src="index.js"></script>
   <script>
     $('button.plus').on('click', function(){
@@ -47,24 +47,45 @@
       const number = document.createElement("input");
       const button = document.createElement("button");
       const br = document.createElement("br");
+      const var2 = document.createElement("div");
+      var2.classList.add("bl");
       text.setAttribute("type", "text");
-      text.classList.add("desc");
+      text.classList.add("rrr");
       number.setAttribute("type", "number");
       number.classList.add("number");
       button.classList.add("del");
+      button.setAttribute("onclick", "maou(event)")
       form.classList.add("form");
       button.innerHTML = "X"
       // form.className('form');
       // const div = document.querySelector('.form').innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
       // form.innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
-      form.appendChild(text);
-      form.appendChild(number);
-      form.appendChild(button);
-      form.appendChild(br);
+      var2.appendChild(text);
+      var2.appendChild(number);
+      var2.appendChild(button);
+      var2.appendChild(br);
+      form.appendChild(var2);
       document.querySelector('.label').style.display = "flex";
-      document.querySelector('.save').style.display = "block";
-      document.querySelector('.create').style.display = "block";
+      document.querySelector('.save').style.display = "inline-block";
+      document.querySelector('.create').style.display = "inline-block";
     });
+  </script>
+  <script>
+    function add(event) {
+      console.log(event.target);
+      
+    }
+  </script>
+  <script>
+    function maou(event) {
+      console.log(event.target);
+      const target = event.target;
+      const elemItem = target.closest('.bl');
+      if (target.classList.contains('del')) {
+        elemItem.remove();
+        console.log('adsd');
+      }
+    }
   </script>
 </body>
 </html>
