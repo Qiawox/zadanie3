@@ -175,3 +175,7 @@ button {
     font-weight: bolder;
     margin-bottom: 20px;
 }
+
+.t3 {
+    display: inline-block;
+}
