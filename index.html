@@ -49,6 +49,7 @@
             const br = document.createElement("br");
             const var2 = document.createElement("div");
             var2.classList.add("bl");
+            var2.setAttribute('data-todo-state', 'active');
             text.setAttribute("type", "text");
             text.classList.add("rrr");
             number.setAttribute("type", "number");
@@ -90,12 +91,50 @@
     </script>
     <script>
         function click1(event) {
+            // const mmm = JSON.parse(localStorage.getItem('value'));
+            const form = document.querySelector(".form");
+            const text = document.createElement("input");
+            const number = document.createElement("input");
+            const button = document.createElement("button");
+            const br = document.createElement("br");
+            const var2 = document.createElement("div");
+            var2.classList.add("bl");
+            text.setAttribute("type", "text");
+            text.classList.add("rrr");
+            number.setAttribute("type", "number");
+            number.classList.add("number");
+            button.classList.add("del");
+            button.setAttribute("onclick", "maou(event)")
+            form.classList.add("form");
+            button.innerHTML = "X"
+                // form.className('form');
+                // const div = document.querySelector('.form').innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+                // form.innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+            var2.appendChild(text);
+            var2.appendChild(number);
+            var2.appendChild(button);
+            var2.appendChild(br);
+            form.appendChild(var2);
+            document.querySelector('.label').style.display = "flex";
+            document.querySelector('.save').style.display = "inline-block";
+            document.querySelector('.create').style.display = "inline-block";
+
+            // document.querySelector('.number').value = mmm.number;
+            // document.querySelector('.rrr').value = mmm.desc;
             console.log(event.target);
             const target = event.target;
             const elemItem = target.closest('.todo__task');
             const elemItem2 = target.closest('.todo__mask');
             const elemItem3 = target.closest('.todosaw');
-            console.log(elemItem);
+            document.querySelector('.name').value = target.closest('.divik').querySelector('.t1').innerHTML;
+            document.querySelector('.rrr').value = target.closest('.divik').querySelector('.t2').innerHTML;
+            document.querySelector('.number').value = target.closest('.divik').querySelector('.t3').innerHTML;
+            const kek = target.closest('.divik').querySelector('.t3').innerHTML;
+            const elemItems = target.closest('.divik');
+            console.log(kek);
+            if (target.classList.contains('bts')) {
+                elemItems.remove();
+            }
             // console.log(out2);
             // console.log(out3);
 
