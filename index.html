@@ -1,91 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
+
 <body>
-  <div>
-    <div class="task">
-      <h1>Task name</h1>
-      <input type="text" placeholder="Enter task name" class="name">
-    </div>
-    <div class="subtask">
-      <h1>
-        Subtask
-        <button class="plus">+</button></h1>
-      <div class="main">
-        <div class="label">
-        <span class="desc">Description</span><span class="time">Time</span><span>Button</span>
+    <div>
+        <div class="task">
+            <h1>Task name</h1>
+            <input type="text" placeholder="Enter task name" class="name">
         </div>
-      <div class="form">
-        
-      </div><br>
-      <button class="save">SAVE TASK IN LocalStorage</button>
-      <button type="button" class="create" onclick="add(event)">CREATE NEW TASK</button>
+        <div class="subtask">
+            <h1>
+                Subtask
+                <button class="plus">+</button></h1>
+            <div class="main">
+                <div class="label">
+                    <span class="desc">Description</span><span class="time">Time</span><span>Button</span>
+                </div>
+                <div class="form">
+
+                </div><br>
+                <button class="save">SAVE TASK IN LocalStorage</button>
+                <button type="button" class="create" onclick="add(event)">CREATE NEW TASK</button>
+            </div>
+        </div>
+        <h1 class="list">Task list</h1>
+        <div class="result">
+
+        </div>
     </div>
-  </div>
-  <h1 class="list">Task list</h1>  
-    <div class="result">
-    </div>
-  </div>
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-  <script>
-    $('button.plus').on('click', function(){
-      const form = document.querySelector(".form");
-      const text = document.createElement("input");
-      const number = document.createElement("input");
-      const button = document.createElement("button");
-      const br = document.createElement("br");
-      const var2 = document.createElement("div");
-      var2.classList.add("bl");
-      text.setAttribute("type", "text");
-      text.classList.add("rrr");
-      number.setAttribute("type", "number");
-      number.classList.add("number");
-      button.classList.add("del");
-      button.setAttribute("onclick", "maou(event)")
-      form.classList.add("form");
-      button.innerHTML = "X"
-      // form.className('form');
-      // const div = document.querySelector('.form').innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
-      // form.innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
-      var2.appendChild(text);
-      var2.appendChild(number);
-      var2.appendChild(button);
-      var2.appendChild(br);
-      form.appendChild(var2);
-      document.querySelector('.label').style.display = "flex";
-      document.querySelector('.save').style.display = "inline-block";
-      document.querySelector('.create').style.display = "inline-block";
-    });
-  </script>
-  <script>
-    function add(event) {
-      console.log(event.target);
-      
-    }
-  </script>
-  <script>
-    function maou(event) {
-      console.log(event.target);
-      const target = event.target;
-      const elemItem = target.closest('.bl');
-      if (target.classList.contains('del')) {
-        elemItem.remove();
-        console.log('adsd');
-      }
-    }
-  </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script>
+        $('button.plus').on('click', function() {
+            const form = document.querySelector(".form");
+            const text = document.createElement("input");
+            const number = document.createElement("input");
+            const button = document.createElement("button");
+            const br = document.createElement("br");
+            const var2 = document.createElement("div");
+            var2.classList.add("bl");
+            text.setAttribute("type", "text");
+            text.classList.add("rrr");
+            number.setAttribute("type", "number");
+            number.classList.add("number");
+            button.classList.add("del");
+            button.setAttribute("onclick", "maou(event)")
+            form.classList.add("form");
+            button.innerHTML = "X"
+                // form.className('form');
+                // const div = document.querySelector('.form').innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+                // form.innerHTML = "<input type='text'><input type='number'><button class='del'>X</button>";
+            var2.appendChild(text);
+            var2.appendChild(number);
+            var2.appendChild(button);
+            var2.appendChild(br);
+            form.appendChild(var2);
+            document.querySelector('.label').style.display = "flex";
+            document.querySelector('.save').style.display = "inline-block";
+            document.querySelector('.create').style.display = "inline-block";
+        });
+    </script>
+    <script>
+        function add(event) {
+            console.log(event.target);
+
+        }
+    </script>
+    <script>
+        function maou(event) {
+            console.log(event.target);
+            const target = event.target;
+            const elemItem = target.closest('.bl');
+            if (target.classList.contains('del')) {
+                elemItem.remove();
+                console.log('adsd');
+            }
+
+        }
+    </script>
+    <script>
+        function click1(event) {
+            console.log(event.target);
+            const target = event.target;
+            const elemItem = target.closest('.todo__task');
+            const elemItem2 = target.closest('.todo__mask');
+            const elemItem3 = target.closest('.todosaw');
+            console.log(elemItem);
+            // console.log(out2);
+            // console.log(out3);
+
+            // if (target.classList.contains('bts')) {
+            //     document.querySelector('.name').value = elemItem;
+            //     document.querySelector('.rrr').value = elemItem2;
+            //     document.querySelector('.number').value = elemItem3;
+            // }
+        }
+    </script>
+    <script>
+        function Delete(event) {
+            console.log(event.target);
+            const target = event.target;
+            const elemItem = target.closest('.divik');
+            if (target.classList.contains('bts1')) {
+                elemItem.remove();
+                console.log('win');
+                localStorage.setItem('todo', document.querySelector('.result').innerHTML);
+            }
+        }
+    </script>
 </body>
+
 </html>
